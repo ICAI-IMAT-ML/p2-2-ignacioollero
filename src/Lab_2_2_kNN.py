@@ -121,10 +121,10 @@ class knn:
         Returns:
             np.ndarray: distance from point to each point in the training dataset.
         """
-        distancias = []
-        for x in self.x_train:
-            distancias.append(minkowski_distance(point,x,self.p))
         
+        
+        distancias = [minkowski_distance(point,x) for x in self.x_train]
+       
         return np.array(distancias)
         
               
